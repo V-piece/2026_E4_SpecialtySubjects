@@ -1,0 +1,144 @@
+\documentclass[dvipdfmx, a4paper]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{subcaption}
+\usepackage{ascmac,multicol,ulem,tikz,amsmath,amssymb,fancybox,}
+\usepackage[inline]{enumitem}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage[siunitx,european resistors, american inductors]{circuitikz} % 単位を綺麗に出力するオプション
+\usepackage{pdfpages}
+\usepackage[outputdir=/Users/kiuchidai/Documents/latex_out]{minted}
+\usepackage{url}
+\usepackage[version=3]{mhchem}
+\usepackage{here}
+\usetikzlibrary{arrows.meta}
+\usepackage{fancyhdr} % ヘッダーをカスタマイズするパッケージ
+
+% --- ヘッダー設定ここから ---
+\pagestyle{fancy}
+\lhead{E4(11)木内 大}      % 左上に表示したい文字（著者名など）
+\rhead{各結合の融点・沸点}             % 右上に現在のセクション名を表示
+\cfoot{\thepage}              % フッター中央にページ番号
+\renewcommand{\headrulewidth}{0.4pt} % ヘッダーの下に線を引く（0ptで消える）
+% --- ヘッダー設定ここまで ---
+% お好みで設定（枠線や行番号など）
+\setminted{
+    frame=lines,
+    framesep=2mm,
+    baselinestretch=1.2,
+    fontsize=\small,
+    linenos
+}
+%ここまでソースコードの表示に関する設定
+\begin{document}
+  \begin{twocolumn}
+  \section{目的}
+    各結合2種類ずつ, 物質の融点・沸点を調べ, 結合の種類による温度の違いを考察する. 
+  \section{各結合の融点・沸点}
+    \subsection{イオン結晶}
+      \begin{enumerate}
+        \item KCl 塩化カリウム\cite{KCl}
+        \begin{itemize}
+          \item 融点: 770 ${}^{\circ}$C
+          \item 沸点: 1420 ${}^{\circ}$C
+        \end{itemize}
+        \item MgO 酸化マグネシウム\cite{MgO}
+        \begin{itemize}
+          \item 融点: 2800 ${}^{\circ}$C
+          \item 沸点: 3600 ${}^{\circ}$C
+        \end{itemize}
+      \end{enumerate}
+
+    \subsection{共有結合結晶}
+      \begin{enumerate}
+        \item \ce{SiO_2} 二酸化ケイ素\cite{SiO2}
+        \begin{itemize}
+          \item 融点: 1710 ${}^{\circ}$C
+          \item 沸点: 2230 ${}^{\circ}$C
+        \end{itemize}
+        \item \ce{Ge} ゲルマニウム\cite{Ge}
+        \begin{itemize}
+          \item 融点: 937.4 ${}^{\circ}$C
+          \item 沸点: 2830 ${}^{\circ}$C
+        \end{itemize}
+      \end{enumerate}
+
+    \subsection{金属結晶}
+      \begin{enumerate}
+        \item W タングステン\cite{Wの特徴}
+        \begin{itemize}
+          \item 融点: 91.85 ${}^{\circ}$C (文献値: 3653 K)
+          \item 沸点: 5526.85 ${}^{\circ}$C (文献値: 5800 K)
+        \end{itemize}
+        なお, 文献値の絶対温度から摂氏温度への変換は, 以下の式で計算している.\\(T: 絶対温度, t: 摂氏温度)\cite{温度}
+        \begin{align*}
+          T = t + 273.15
+        \end{align*}
+        \item Ti チタン\cite{Tiの特徴}
+        \begin{itemize}
+          \item 融点: 1668 ${}^{\circ}$C
+          \item 沸点: 3287 ${}^{\circ}$C
+        \end{itemize}
+      \end{enumerate}
+  \newpage
+    \subsection{ファンデルワールス結晶}
+      \begin{enumerate}
+        \item \ce{C10H8} ナフタレン\cite{ナフタレン}
+        \begin{itemize}
+          \item 融点: 80 ${}^{\circ}$C
+          \item 沸点: 218 ${}^{\circ}$C
+        \end{itemize}
+        \item \ce{CH4} メタン\cite{メタン}
+        \begin{itemize}
+          \item 融点: $-183$ ${}^{\circ}$C
+          \item 沸点: $-161$ ${}^{\circ}$C
+        \end{itemize}
+      \end{enumerate}
+    \subsection{水素結合結晶}
+      \begin{enumerate}
+        \item \ce{NH3} アンモニア\cite{アンモニア}
+        \begin{itemize}
+          \item 融点: $-77.7$ ${}^{\circ}$C
+          \item 沸点: $-33.35$ ${}^{\circ}$C
+        \end{itemize}
+        \item \ce{HF} フッ化水素\cite{フッ化水素}
+        \begin{itemize}
+          \item 融点: $-83.53$ ${}^{\circ}$C
+          \item 沸点: $19.51$ ${}^{\circ}$C
+        \end{itemize}
+      \end{enumerate}
+
+  \section{考察}
+  はじめに, 融点・沸点の傾向をまとめると以下のようになる.
+  \begin{itemize}
+    \item イオン結晶: 融点・沸点が高い
+    \item 共有結合結晶: 融点・沸点が高い
+    \item 金属結晶: 融点・沸点が高い
+    \item ファンデルワールス結晶: 融点・沸点が低い
+    \item 水素結合結晶: 融点・沸点が低い
+  \end{itemize}
+  一方, 授業資料においては, 結合エネルギーのオーダーについて以下のように触れられていた. 
+  \begin{itemize}
+    \item イオン結合, 金属結合, 共有結合: \\数eV/ボンド のオーダー
+    \item ファンデルワールス結合, 水素結合: \\0.1 eV/ボンド のオーダー
+  \end{itemize}
+  これを比較すると, 結合エネルギーが大きいほど融点・沸点が高くなっているという傾向が見られる. \\
+  したがって, 結合エネルギーの大きいものほど, それを結合を打ち切るために必要な熱量が大きくなることから, 融点・沸点が高くなると考えられる. 
+  \end{twocolumn}
+  \begin{thebibliography}{9}
+    \bibitem{KCl} 塩化カリウム, Chemical Book, \url{https://www.chemicalbook.com/ChemicalProductProperty_JP_CB9137176.htm} (最終閲覧: 2026/10/25)
+    \bibitem{MgO} 酸化マグネシウム, 富士フイルム和光純薬株式会社, \url{https://labchem-wako.fujifilm.com/jp/product/detail/W01W0113-0028.html} (最終閲覧: 2026/10/25)
+    \bibitem{SiO2} シリカ(結晶質、非晶質を包含した二酸化ケイ素), 職場の安全サイト, 厚生労働省, \url{https://anzeninfo.mhlw.go.jp/anzen/gmsds/7631-86-9.html} (最終閲覧: 2026/10/25)
+    \bibitem{Ge} ゲルマニウム, 株式会社ネオトロン, \url{http://www.neotron.co.jp/crystal/3/Ge.Au.html} (最終閲覧: 2026/10/25)
+    \bibitem{Wの特徴} タングステンの特長, 株式会社アライドマテリアル, \url{https://www.allied-material.co.jp/techinfo/tungsten/features.html} (最終閲覧: 2026/10/25)
+    \bibitem{温度} 温度, KIT物理ナビゲーション, 金沢工業大学, \url{https://w3e.kanazawa-it.ac.jp/math/physics/high-school_index/thermodynamics/temperature_and_heat/henkan-tex.cgi?target=/math/physics/high-school_index/thermodynamics/temperature_and_heat/temperature.html} (最終閲覧: 2026/10/25)
+    \bibitem{金属物理的性質} 金属の物理的性質, フィンテック, \\\url{https://www.fintech.co.jp/etc-data/kinzoku-data.htm} (最終閲覧: 2026/10/25)
+    \bibitem{Tiの特徴} チタン元素特性と用途, Stanford Advanced Materials, \url{https://www.samaterials.jp/blog/titanium-element-properties-and-uses.html} (最終閲覧: 2026/10/25)
+    \bibitem{ナフタレン} ナフタレン, 職場の安全サイト, 厚生労働省, \url{https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html} (最終閲覧: 2026/10/25)
+    \bibitem{メタン} メタン, 職場の安全サイト, 厚生労働省, \url{https://anzeninfo.mhlw.go.jp/anzen/gmsds/1402.html} (最終閲覧: 2026/10/25)
+    \bibitem{アンモニア} アンモニア, Webkis-Plus, 国立環境研究所, \url{https://www.nies.go.jp/kisplus/dtl/chem/YOT00600.html} (最終閲覧: 2026/10/25)
+    \bibitem{フッ化水素} 高純度フッ化水素 (HF), 株式会社レゾナック, \url{https://www.resonac.com/jp/products/semi-frontend-process/76/00010.html} (最終閲覧: 2026/10/25)
+    \bibitem{温度2} 熱の基礎知識, 理化学工業株式会社, \url{https://www.rkcinst.co.jp/technical_commentary/14378/} (最終閲覧: 2026/10/25)
+  \end{thebibliography}
+\end{document}
