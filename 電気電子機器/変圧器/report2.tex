@@ -1,0 +1,41 @@
+\documentclass[dvipdfmx, a4paper]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{subcaption}
+\usepackage{ascmac,multicol,ulem,tikz,amsmath,amssymb,fancybox,}
+\usepackage[inline]{enumitem}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage[siunitx,european resistors, american inductors]{circuitikz} % 単位を綺麗に出力するオプション
+\usepackage{pdfpages}
+\usepackage[outputdir=/Users/kiuchidai/Documents/latex_out]{minted}
+\usepackage{url}
+\usepackage[version=3]{mhchem}
+\usepackage{here}
+\usetikzlibrary{arrows.meta}
+\usepackage{fancyhdr} % ヘッダーをカスタマイズするパッケージ
+
+% --- ヘッダー設定ここから ---
+\pagestyle{fancy}
+\lhead{E4(11)木内 大}      % 左上に表示したい文字（著者名など）
+\rhead{変圧器レポート}             % 右上に現在のセクション名を表示
+\cfoot{\thepage}              % フッター中央にページ番号
+\renewcommand{\headrulewidth}{0.4pt} % ヘッダーの下に線を引く（0ptで消える）
+% --- ヘッダー設定ここまで ---
+% お好みで設定（枠線や行番号など）
+\setminted{
+    frame=lines,
+    framesep=2mm,
+    baselinestretch=1.2,
+    fontsize=\small,
+    linenos
+}
+%ここまでソースコードの表示に関する設定
+\begin{document}
+  \section{応用事例}
+  \section{用いられている変圧器}
+  \section{改善点}
+  \begin{thebibliography}{9}
+    \bibitem{KCl} 
+  \end{thebibliography}
+\end{document}

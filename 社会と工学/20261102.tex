@@ -1,0 +1,125 @@
+\documentclass[uplatex, 11pt, a4paper]{bxjsarticle}
+\usepackage[a4paper, margin=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+% Color definitions
+\definecolor{primary}{RGB}{30, 78, 121}
+\definecolor{secondary}{RGB}{70, 130, 180}
+\definecolor{accent}{RGB}{218, 112, 214}
+\definecolor{bglight}{RGB}{245, 247, 250}
+\definecolor{bordercolor}{RGB}{200, 210, 220}
+
+\tcolorboxenvironment{itemize}{
+  blanker,
+  before skip=4pt,
+  after skip=4pt,
+  leftmargin=12pt
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{\color{primary} 富士市・9画面法（獣害対策・森林保全）におけるデータ集約レポート}}\\[6pt]
+    {\large \textbf{― KJ法（親島・子島構造）を用いた9画面統合分析 ―}}\\[4pt]
+    {\small 提出日: 2026年11月2日 \quad | \quad 分析対象: 提出PDF資料（手書き・AI作成 9画面法）}
+\end{center}
+
+\vspace{0.5em}
+
+\begin{tcolorbox}[colback=bglight, colframe=primary, title=\textbf{集約・分析の基本方針}]
+本レポートは、アップロードされた複数の「9画面法」シート（手書き・AI生成）に記載された意見やアイデアを**KJ法（定性的データ親和図法）**を用いて構造化したものです。
+\begin{itemize}[label=•]
+    \item \textbf{対象データの絞り込み}: 指示に基づき、主に「やってみよう②（興味あるテーマ：獣害対策・森林保全）」の記述を中心に集約を行いました。
+    \item \textbf{時間軸（過去 $\rightarrow$ 現在 $\rightarrow$ 未来）の構造化}: 9画面法のマトリクス（時間軸 $\times$ システム階層）を維持しつつ、共通する要素を「大グループ（親島）」および「具体要素（子島）」として抽出・整理しました。
+\end{itemize}
+\end{tcolorbox}
+
+\section*{1. KJ法による9画面統合マトリクス}
+
+各シートから抽出したテキスト要素を、上位システム（社会・環境）、現状システム（対象・運用）、下位システム（技術・資材）の3階層および「過去・現在・未来」の時間軸で整理したKJ集約表です。
+
+\begin{table}[h]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{2.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\hline
+\rowcolor{primary}
+\color{white}\textbf{システム階層} & \color{white}\textbf{過去 (Past)} & \color{white}\textbf{現在 (Present)} & \color{white}\textbf{未来 (Future)} \\ \hline
+\rowcolor{bglight}
+\textbf{上位システム}\newline (環境・社会・背景) & 
+\textbf{【拡大造林と資源依存】}\newline
+・製紙業を軸とする発展と木材需要の背景\newline
+・戦後の大規模なスギ・ヒノキ植林\newline
+・人的防護・狩猟による生態系維持 & 
+\textbf{【環境変化と労働不足】}\newline
+・気候変動（ゲリラ豪雨等）と気象リスク増大\newline
+・鹿・ウサギ等の生息域拡大（高標高化）\newline
+・猟友会高齢化と林業人手不足 & 
+\textbf{【持続可能エコシステム】}\newline
+・「富士山エコクレジット」等の資金循環\newline
+・スマート林業・地域一体での共生\newline
+・林業・観光・製造業の連携モデル \\ \hline
+\textbf{現状のシステム}\newline (防護・運用・課題) & 
+\textbf{【対症療法・手作業】}\newline
+・竹や荒縄、木製単木材による個別防護\newline
+・被害箇所ごとの補植と手作業での苗木植え\newline
+・人的労力依存の管理 & 
+\textbf{【対症療法の限界・膨大コスト】}\newline
+・金属・プラスチック柵等の導入と破損問題\newline
+・風倒木や動物突破、雨による忌避剤流亡\newline
+・補修と再散布によるイタチごっこ＆高負荷 & 
+\textbf{【統合型・スマート防護】}\newline
+・「見つける（AI/IoT）」と「守る（耐水資材/忌避）」の連動\newline
+・本能的忌避（味・匂い）による接近防止\newline
+・ジビエ活用等による地域経済定着 \\ \hline
+\rowcolor{bglight}
+\textbf{下位システム}\newline (具体的技術・要素) & 
+\textbf{【自然素材と食害メカニズム】}\newline
+・小枝・荒縄被せなど時間・コストのかかる手法\newline
+・春～夏の頂芽食害、秋冬の樹皮剥ぎ（環状剥皮） & 
+\textbf{【従来資材と運用の制約】}\newline
+・水溶性忌避剤の乾燥時間（1～3h）と流失\newline
+・防護具（ヘキサチューブ等）の回収・管理負担\newline
+・トレイルカメラ等の局所運用 & 
+\textbf{【新素材・自動化技術】}\newline
+・耐水・即乾型資材、セルロースナノファイバー（CNF）スマート保護カバー\newline
+・自動カメラ・ドローン・赤外線AI検知による自動散布 \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{1em}
+
+\section*{2. KJ法グループ化に基づく課題分析と未来構想}
+
+\subsection*{(1) 過去の背景（親島: 手作業主体の保護と産業基盤）}
+\begin{itemize}[label=--]
+    \item \textbf{子島 A: 製紙都市としての歩み}: 富士山の豊かな水資源と森林資源を背景に、製紙業および造林が拡大された。
+    \item \textbf{子島 B: 局所的な手作業防護}: 竹、荒縄、木製保護材を用いた個別対応が中心であり、労力と時間がかかる構造であった。
+\end{itemize}
+
+\subsection*{(2) 現在の限界（親島: 労働限界とイタチごっこの常態化）}
+\begin{itemize}[label=--]
+    \item \textbf{子島 A: 資材・薬品の機能的限界}: 水溶性忌避剤が雨で流亡（ウォッシュアウト）し、再散布が必要。またプラスチック・金属柵の老朽化や風倒木・動物突破による破損が多発している。
+    \item \textbf{子島 B: 生態系変化と人手不足}: 鹿等の生息域拡大（高標高化）に対し、猟友会・林業従事者の高齢化が重なり、維持管理コストが持続不可能なレベルに達している。
+\end{itemize}
+
+\subsection*{(3) 未来の方向性（親島: 新素材・AI・地域共生モデルの構築）}
+\begin{itemize}[label=--]
+    \item \textbf{子島 A: 先端素材（CNF・耐水型資材）の活用}: 回収不要な植物由来・生分解性カバー（富士市のCNF技術応用）や、本能的に動物が嫌がる味・匂いの即乾・耐水ジェルによる防護。
+    \item \textbf{子島 B: IoT/AIによるピンポイント自動防護}: トレイルカメラ・ドローン・赤外線AI検知と連動し、動物の接近を自動で感知して効率的に忌避・監視を行う仕組み。
+    \item \textbf{子島 C: 社会制度・エコシステムの確立}: 「富士山エコクレジット」等の資金循環システムを構築し、企業・自治体・市民が連携して持続可能な森林保全とジビエ等の地域資源化を推進する。
+\end{itemize}
+
+\end{document}
